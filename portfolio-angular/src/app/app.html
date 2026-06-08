@@ -1,4 +1,13 @@
-<h1>{{ title() }}</h1>
-<p>Bem vindo ao meu portfólio - em construção com angular!</p>
-<h3>Gustavo Henrique Maciel</h3>
-<p>Sou aluno do 3 ano de informatica do IFPR, gosto de programação, esportes e tecnologia. Com este portfólio, pretendo demonstrar meus conhecimentos e habilidades em desenvolvimento web. </p>
+<mat-toolbar color="primary">
+  <span>Meu Portfólio</span>
+  <span class="espacador"></span>
+
+  <a mat-button routerLink="/" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+  <a mat-button routerLink="/sobre" routerLinkActive="ativo">Sobre</a>
+  <a mat-button routerLink="/projetos" routerLinkActive="ativo">Projetos</a>
+  <a mat-button routerLink="/contato" routerLinkActive="ativo">Contato</a>
+</mat-toolbar>
+
+<main style="padding: 24px;">
+  <router-outlet></router-outlet>
+</main>
