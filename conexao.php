@@ -1,6 +1,7 @@
 <?php
 // conexao.php conexao PDO com o MariaDB (reutilizavel)
-$host = 'localhost';
+// Use 127.0.0.1 para evitar problemas com localhost resolvendo para ::1
+$host = '127.0.0.1';
 $db = 'dwii_db';
 $user = 'dwii_user';
 $pass = 'dwii2026';

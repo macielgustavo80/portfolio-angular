@@ -4,7 +4,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "types": []
+    "types": [],
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0",
+    "baseUrl": "./",
+    "paths": {
+      "@angular/*": ["./node_modules/@angular/*"]
+    }
   },
   "include": [
     "src/**/*.ts"

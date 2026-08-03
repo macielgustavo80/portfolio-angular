@@ -1,15 +1,26 @@
-<mat-card>
-  <mat-card-title>Projetos</mat-card-title>
+@if (carregando) {
+  <p>Carregando projetos...</p>
+}
 
-  <mat-card-content>
-    <h3>Portfolio php</h3>
-    <p>
-      Projeto de desenvolvimento de um portfólio utilizando PHP.
-    </p>
+@if (erro) {
+  <p>{{ erro }}</p>
+}
 
-    <h3>Portfólio Angular</h3>
-    <p>
-      Aplicação construída utilizando Angular e Angular Material.
-    </p>
-  </mat-card-content>
-</mat-card>
+@if (!carregando && projetos.length === 0) {
+  <p>Nenhum projeto publicado ainda.</p>
+}
+
+@for (p of projetos; track p.id) {
+  <mat-card style="margin-bottom: 12px;">
+    <mat-card-header>
+      <mat-card-title>{{ p.nome }}</mat-card-title>
+      <mat-card-subtitle>{{ p.tecnologias }} • {{ p.ano }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>{{ p.descricao }}</mat-card-content>
+    <mat-card-actions>
+      @if (p.link_github) {
+        <a mat-button [href]="p.link_github" target="_blank" rel="noopener">Ver no GitHub</a>
+      }
+    </mat-card-actions>
+  </mat-card>
+}
