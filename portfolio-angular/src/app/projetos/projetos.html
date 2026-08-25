@@ -6,7 +6,7 @@
   <p>{{ erro }}</p>
 }
 
-@if (!carregando && projetos.length === 0) {
+@if (!carregando && !erro && projetos.length === 0) {
   <p>Nenhum projeto publicado ainda.</p>
 }
 

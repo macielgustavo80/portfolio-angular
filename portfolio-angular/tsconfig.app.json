@@ -6,7 +6,7 @@
     "rootDir": "./src",
     "types": [],
     "moduleResolution": "bundler",
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "baseUrl": "./",
     "paths": {
       "@angular/*": ["./node_modules/@angular/*"]

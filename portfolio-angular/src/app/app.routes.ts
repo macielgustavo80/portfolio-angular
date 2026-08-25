@@ -3,10 +3,12 @@ import { Home } from './home/home';
 import { Sobre } from './sobre/sobre';
 import { Projetos } from './projetos/projetos';
 import { Contato } from './contato/contato';
+import { Gestao } from './gestao/gestao';
 
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'sobre', component: Sobre },
   { path: 'projetos', component: Projetos },
   { path: 'contato', component: Contato },
+  { path: 'gestao', component: Gestao },
 ];
