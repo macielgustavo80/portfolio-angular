@@ -94,16 +94,23 @@ Conceito pretendido: B
 
 O endereço continua o mesmo porque o servidor também olha o método da requisição. GET consulta dados; POST cria; PUT altera o projeto indicado pelo `id`; DELETE remove esse mesmo projeto. Assim, a rota fica única e cada ação continua explícita.
 
-## Aula 19: testes para rodar com a API no ar
+## Aula 19: testes com curl
 
-Os comandos abaixo servem para conferir os retornos pedidos na atividade antes da entrega. Eles não substituem testar a tela em `/gestao` com o banco ligado.
+Com a API e o banco locais ligados, os retornos conferidos foram:
 
-    curl -i -X POST http://localhost:8000/api/projetos.php -H "Content-Type: application/json" -d "{}"
-    curl -i -X PUT "http://localhost:8000/api/projetos.php" -H "Content-Type: application/json" -d "{}"
-    curl -i -X DELETE "http://localhost:8000/api/projetos.php?id=999999"
-    curl -i -X PATCH http://localhost:8000/api/projetos.php
+    HTTP/1.1 400 Bad Request
+    {"erro":"Nome e ano válidos são obrigatórios."}
 
-O endpoint responde 400 quando faltam nome ou id, 404 quando o projeto não existe e 405 para um verbo não tratado. Depois de testar, registre a primeira linha e o JSON retornado no envio da atividade.
+    HTTP/1.1 400 Bad Request
+    {"erro":"Informe o id do projeto."}
+
+    HTTP/1.1 404 Not Found
+    {"erro":"Projeto não encontrado."}
+
+    HTTP/1.1 405 Method Not Allowed
+    {"erro":"Método não permitido."}
+
+Também foi conferido um POST com status 201, um PUT com status 200, um DELETE com status 204 e o OPTIONS com status 204 e `Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS`.
 
 ## Aula 19: atualização da lista
 
