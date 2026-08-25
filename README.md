@@ -56,3 +56,14 @@ Acesse http://localhost:4200/.
 
 ## Tecnologias
 Angular, TypeScript, Angular Material, HTML, CSS, PHP, PDO, MariaDB.
+
+## 🎯 Autoavaliação
+
+Conceito pretendido: B
+
+Justificativa:
+
+- Consumo da API (Projetos): `portfolio-angular/src/app/projeto.service.ts` faz o GET dos projetos e `portfolio-angular/src/app/projetos/projetos.ts` recebe a lista. A tela usa `@for` e mostra carregamento, erro e estado vazio em `portfolio-angular/src/app/projetos/projetos.html`.
+- Catálogo + botão GitHub: `portfolio-angular/src/app/tecnologia.service.ts` busca as tecnologias e `portfolio-angular/src/app/catalogo/catalogo.html` mostra carregamento, erro e a mensagem quando não há itens. O botão "Ver no GitHub" está em `portfolio-angular/src/app/projetos/projetos.html` com `[href]`.
+- Boas práticas: a URL base da API está em `portfolio-angular/src/app/api-url.ts`; as requisições HTTP ficam nos services e os componentes cuidam só dos dados da tela.
+- Autoavaliação: esta seção do README.
