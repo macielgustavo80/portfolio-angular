@@ -1,8 +1,41 @@
 <mat-card>
-  <mat-card-title>Contato</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>Contato</mat-card-title>
+  </mat-card-header>
 
   <mat-card-content>
-    <p>Email: macielgustavo1006@gmail.com</p>
-    <p>GitHub: github.com/macielgustavo80</p>
+    <form [formGroup]="form" (ngSubmit)="enviar()">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" formControlName="nome" />
+      @if (form.controls.nome.invalid && form.controls.nome.touched) {
+        <p class="erro-campo">Informe um nome com pelo menos 3 letras.</p>
+      }
+
+      <label for="email">E-mail</label>
+      <input id="email" type="email" formControlName="email" />
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <p class="erro-campo">E-mail inválido.</p>
+      }
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" rows="5" formControlName="mensagem"></textarea>
+      @if (form.controls.mensagem.invalid && form.controls.mensagem.touched) {
+        <p class="erro-campo">A mensagem precisa ter pelo menos 10 caracteres.</p>
+      }
+
+      @if (enviando) {
+        <p>Enviando...</p>
+      }
+      @if (sucesso) {
+        <p class="sucesso">{{ sucesso }}</p>
+      }
+      @if (erro) {
+        <p class="erro-envio">{{ erro }}</p>
+      }
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || enviando">
+        Enviar
+      </button>
+    </form>
   </mat-card-content>
 </mat-card>

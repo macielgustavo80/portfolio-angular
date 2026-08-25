@@ -1,0 +1,20 @@
+form {
+  display: grid;
+  gap: 8px;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 8px;
+}
+
+.erro-campo,
+.erro-envio {
+  color: #b00020;
+  margin: 0;
+}
+
+.sucesso {
+  color: #137333;
+}
