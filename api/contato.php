@@ -23,13 +23,13 @@ $email = trim($dados['email'] ?? '');
 $mensagem = trim($dados['mensagem'] ?? '');
 $erros = [];
 
-if (mb_strlen($nome) < 3) {
+if (strlen($nome) < 3) {
     $erros['nome'] = 'Informe um nome com pelo menos 3 letras.';
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $erros['email'] = 'Informe um e-mail válido.';
 }
-if (mb_strlen($mensagem) < 10) {
+if (strlen($mensagem) < 10) {
     $erros['mensagem'] = 'A mensagem precisa ter pelo menos 10 caracteres.';
 }
 
