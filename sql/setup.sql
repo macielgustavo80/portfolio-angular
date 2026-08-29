@@ -43,12 +43,12 @@ SHOW TABLES;
 USE dwii_db;
 
 INSERT INTO projetos (nome, descricao, tecnologias, link_github, ano, status) VALUES
-('Portfolio Pessoal',            'Site de portfolio responsivo com PHP, PDO e MariaDB, painel admin e login.', 'PHP, MariaDB, CSS, Git',   'https://github.com/usuario/portfolio',  2026, 'publicado'),
-('Sistema de Biblioteca',        'CRUD de acervo e emprestimos, com busca e relatorios.',                      'PHP, MariaDB, Bootstrap',  'https://github.com/usuario/biblioteca', 2025, 'publicado'),
-('App de Tarefas',               'Lista de tarefas com categorias, prazos e filtro por status.',               'JavaScript, HTML, CSS',    'https://github.com/usuario/tarefas',    2025, 'publicado'),
-('Loja Virtual (prototipo)',     'Catalogo de produtos com carrinho e checkout simulado.',                     'PHP, MariaDB, JavaScript', 'https://github.com/usuario/loja',       2024, 'publicado'),
-('API de Clima',                 'Microsservico que consome uma API publica e devolve a previsao em JSON.',    'PHP, REST',                'https://github.com/usuario/clima',      2026, 'publicado'),
-('Jogo da Velha (em construcao)','Jogo da velha local - ainda em desenvolvimento.',                            'JavaScript, HTML',         NULL,                                    2026, 'rascunho');
+('Harpia',
+'Plataforma de gestao de pessoas e operacoes internas, com funcionarios, tarefas, solicitacoes, onboarding, offboarding e recursos de IA.',
+'Next.js, TypeScript, Tailwind CSS, Prisma e PostgreSQL',
+'https://github.com/macielhgustavo/harpia',
+2026,
+'publicado');
 
 INSERT INTO tecnologias (nome, categoria, descricao, ano_criacao) VALUES
 ('HTML',       'Frontend',       'Linguagem de marcacao para estrutura de paginas.', 1993),

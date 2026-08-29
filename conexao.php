@@ -1,13 +1,12 @@
 <?php
-// conexao.php conexao PDO com o MariaDB (reutilizavel)
-// Use 127.0.0.1 para evitar problemas com localhost resolvendo para ::1
-$host = '127.0.0.1';
+
+
+$host = 'localhost';
 $db = 'dwii_db';
 $user = 'dwii_user';
 $pass = 'dwii2026';
 $charset = 'utf8mb4';
 
-// host 'localhost' conecta pelo socket local (casa com o usuario @'localhost')
 $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
 
 $opcoes = [

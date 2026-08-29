@@ -119,3 +119,7 @@ Depois de salvar, a tela pede a lista novamente à API para trazer os dados como
 ## Aula 19: uma operação na aba Network
 
 Ao adicionar um projeto, a requisição é POST e a API responde 201 com `Content-Type: application/json`. Ao apagar, a requisição é DELETE e a resposta é 204 porque não há conteúdo para devolver depois de remover o registro.
+
+## Aula 19: clique duplo ao salvar
+
+Enquanto o projeto está sendo salvo, `salvando` fica como `true` e o botão é bloqueado. Isso evita que dois cliques rápidos enviem dois POSTs e criem o mesmo projeto duas vezes.
