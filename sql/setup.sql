@@ -1,7 +1,5 @@
 CREATE DATABASE dwii_db;
-CREATE USER 'dwii_user'@'localhost' IDENTIFIED BY 'dwii2026';
-GRANT ALL PRIVILEGES ON dwii_db.* TO 'dwii_user'@'localhost';
-FLUSH PRIVILEGES;
+-- Crie o usuário separadamente com sua própria senha (veja o README).
 
 USE dwii_db;
 
@@ -59,3 +57,11 @@ INSERT INTO tecnologias (nome, categoria, descricao, ano_criacao) VALUES
 ('Git',        'DevOps',         'Sistema de controle de versao distribuido.',       2005);
 
 SELECT id, nome, ano, status FROM projetos;
+
+-- Projetos reais do aluno; o rascunho prova o filtro da API pública.
+INSERT INTO projetos (nome, descricao, tecnologias, link_github, ano, status) VALUES
+('Portfólio Angular', 'Portfólio da disciplina Desenvolvimento Web II com catálogo, contato e gestão de projetos.',
+ 'Angular, TypeScript, Node.js, Express, MariaDB', 'https://github.com/macielgustavo80/portfolio-angular', 2026, 'publicado'),
+('Desenvolvimento Web II', 'Repositório de atividades da disciplina Desenvolvimento Web II.',
+ 'HTML, CSS, JavaScript', 'https://github.com/macielgustavo80/2026-DWII', 2026, 'publicado'),
+('Próximo projeto', 'Planejamento de um projeto ainda não publicado.', '', NULL, 2026, 'rascunho');

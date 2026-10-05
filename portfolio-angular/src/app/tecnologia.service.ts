@@ -12,7 +12,7 @@ ano_criacao: number;
 @Injectable({ providedIn: 'root' })
 export class TecnologiaService {
 private http = inject(HttpClient);
-private url = `${API_URL}/tecnologias.php`;
+private url = `${API_URL}/tecnologias`;
 listar(): Observable<Tecnologia[]> {
 return this.http.get<Tecnologia[]>(this.url);
 }

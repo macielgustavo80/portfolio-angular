@@ -8,7 +8,7 @@ export interface Projeto {
   nome: string;
   descricao: string;
   tecnologias: string;
-  link_github: string;
+  link_github: string | null;
   ano: number;
   status?: string;
 }
@@ -25,7 +25,7 @@ export interface ProjetoDados {
 @Injectable({ providedIn: 'root' })
 export class ProjetoService {
   private http = inject(HttpClient);
-  private url = `${API_URL}/projetos.php`;
+  private url = `${API_URL}/projetos`;
 
   listar(todos = false): Observable<Projeto[]> {
     const url = todos ? `${this.url}?todos=1` : this.url;
@@ -37,10 +37,10 @@ export class ProjetoService {
   }
 
   atualizar(id: number, dados: ProjetoDados): Observable<{ mensagem: string }> {
-    return this.http.put<{ mensagem: string }>(`${this.url}?id=${id}`, dados);
+    return this.http.put<{ mensagem: string }>(`${this.url}/${id}`, dados);
   }
 
   excluir(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}?id=${id}`);
+    return this.http.delete<void>(`${this.url}/${id}`);
   }
 }

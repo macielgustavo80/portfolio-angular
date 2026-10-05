@@ -14,6 +14,6 @@ export class ContatoService {
   private http = inject(HttpClient);
 
   enviar(dados: ContatoDados): Observable<{ mensagem: string }> {
-    return this.http.post<{ mensagem: string }>(`${API_URL}/contato.php`, dados);
+    return this.http.post<{ mensagem: string }>(`${API_URL}/contato`, dados);
   }
 }
